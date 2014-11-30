@@ -19,14 +19,10 @@ The recommended way to install array-utility is through [Composer](http://getcom
 Next, update your project's composer.json file to include ArrayUtility:
 
     {
-        "repositories": [
-            {
-                "type": "git",
-                "url": "https://github.com/paslandau/array-utility.git"
-            }
-        ],
+        "repositories": [ { "type": "composer", "url": "http://packages.myseosolution.de/"} ],
+        "minimum-stability": "dev",
         "require": {
-             "paslandau/array-utility": "~0"
+             "paslandau/array-utility": "dev-master"
         }
     }
 
