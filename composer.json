@@ -21,6 +21,7 @@
             "url": "http://packages.myseosolution.de/"
         }
     ],
+    "minimum-stability": "dev",
     "require" : {
         "php": "~5.5",
         "paslandau/comparison-utility": "dev-master"
