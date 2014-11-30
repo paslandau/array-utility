@@ -23,7 +23,7 @@
     ],
     "require" : {
         "php": "~5.5",
-        "paslandau/comparison-utility": "~0"
+        "paslandau/comparison-utility": "dev-master"
     },
     "require-dev" : {
         "phpunit/phpunit": "~3"
