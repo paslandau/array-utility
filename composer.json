@@ -17,8 +17,8 @@
 	},
     "repositories": [
         {
-            "type": "git",
-            "url": "https://github.com/paslandau/comparison-utility.git"
+            "type": "composer",
+            "url": "http://packages.myseosolution.de/"
         }
     ],
     "require" : {
