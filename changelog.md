@@ -1,8 +1,12 @@
-## 0.1.1
+###0.1.2
+
+ - fixed toString Intendation and added test to toString
+
+###0.1.1
 
  - updated repositories to local satis installation
 
-## 0.1.0
+##0.1.0
 
  - changed package name from ArrayUtility to array-utility
 

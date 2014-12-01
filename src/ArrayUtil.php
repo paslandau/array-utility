@@ -368,8 +368,9 @@ class ArrayUtil
             if(is_array($val)){
                 // mark parent array
                 $arr[] = self::$uniqueObject;
-                $indent += mb_strlen("{$key} => ");
-                $str = "(Array) [\n".self::_toString($val,$level,$indent)."\n{$w}]";
+//                $deepindent = $indent+mb_strlen("{$key} => ");
+                $deepindent = $indent+4;
+                $str = "(Array) [\n".self::_toString($val,$level,$deepindent)."\n{$w}]";
                 //remove mark
                 array_pop($arr);
             }
@@ -388,7 +389,7 @@ class ArrayUtil
             }
             $result[] = "{$w}$key => $str";
         }
-        return implode("\n",$result);
+        return implode(",\n",$result);
     }
 
 //    /**

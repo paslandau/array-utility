@@ -16,7 +16,7 @@ The recommended way to install array-utility is through [Composer](http://getcom
 
     curl -sS https://getcomposer.org/installer | php
 
-Next, update your project's composer.json file to include ArrayUtility:
+Next, update your project's composer.json file to include array-utility:
 
     {
         "repositories": [ { "type": "composer", "url": "http://packages.myseosolution.de/"} ],
