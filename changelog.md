@@ -1,6 +1,7 @@
 ###0.1.2
 
  - fixed toString Intendation and added test to toString
+ - added __toString() method to array path
 
 ###0.1.1
 

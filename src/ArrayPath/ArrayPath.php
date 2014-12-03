@@ -175,4 +175,8 @@ class ArrayPath implements ArrayPathInterface {
     {
         return $this->parsedArrayPath;
     }
+
+    public function __toString(){
+        return "[".implode($this->parsedArrayPath)."]";
+    }
 }
