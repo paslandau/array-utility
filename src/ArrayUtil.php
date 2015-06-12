@@ -56,9 +56,13 @@ class ArrayUtil
      * );
      * @param array &$array
      * @param array $criteria
+     * @param bool $maintainIndexAssociation [optional]. Default: false.
      */
-    public static function sortMulti(array &$array, array $criteria)
+    public static function sortMulti(array &$array, array $criteria, $maintainIndexAssociation = false)
     {
+        foreach($criteria as $key => $val){
+            $criteria[$key] = mb_strtolower($val);
+        }
         $comparer = function ($first, $second) use ($criteria) {
             foreach ($criteria as $key => $orderType) {
                 if ($first[$key] < $second[$key]) {
@@ -70,7 +74,11 @@ class ArrayUtil
             // all elements were equal
             return 0;
         };
-        usort($array, $comparer);
+        if($maintainIndexAssociation){
+            uasort($array, $comparer);
+        }else {
+            usort($array, $comparer);
+        }
         //TODO compare performance to array_multisort();
     }
 
