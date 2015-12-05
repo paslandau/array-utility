@@ -92,6 +92,18 @@ class ArrayUtilTest extends PHPUnit_Framework_TestCase {
         $inputCopy = $input;
         ArrayUtil::sortMulti($inputCopy,$criteria);
         $this->assertTrue(ArrayUtil::equals($inputCopy,$expected,true),"Result error at ".json_encode($criteria).":\n".ArrayUtilityTestHelper::getArrStr($expected,$inputCopy,$input));
+
+        $expected = [
+            ["id" => 5, "name" => "Hugo", "age" => "55"],
+            ["id" => 2, "name" => "Angus", "age" => "25"],
+            ["id" => 3, "name" => "Mark", "age" => "25"],
+            ["id" => 1, "name" => "Pascal", "age" => "15"],
+        ];
+
+        $criteria = ["age" => "desc", "id" => "asc"];
+        $inputCopy = $input;
+        ArrayUtil::sortMulti($inputCopy,$criteria);
+        $this->assertTrue(ArrayUtil::equals($inputCopy,$expected,true),"Result error at ".json_encode($criteria).":\n".ArrayUtilityTestHelper::getArrStr($expected,$inputCopy,$input));
     }
 
     public function test_getOrderedSubsets(){
@@ -511,27 +523,27 @@ recursion => (Array) [
                     "input" => $arr1,
                     "expected" => "recursion => (Array) [\n{$getIndent(4)}recursion => (Array) [\n{$getIndent(4*2)}[... recursion ...]\n{$getIndent(4)}]\n]"
                 ],
-            "key-array-recursive-reference-multi" =>
-                [
-                    "input" => $arr3,
-                    "expected" => "foo => bar,
-recursion3 => (Array) [
-{$getIndent(4)}bar => foo,
-{$getIndent(4)}recursion4 => (Array) [
-{$getIndent(4)}{$getIndent(4)}foo => bar,
-{$getIndent(4)}{$getIndent(4)}recursion3 => (Array) [
-{$getIndent(4)}{$getIndent(4)}{$getIndent(4)}[... recursion ...]
-{$getIndent(4)}{$getIndent(4)}]
-{$getIndent(4)}],
-{$getIndent(4)}recursion4-2 => (Array) [
-{$getIndent(4)}{$getIndent(4)}[... recursion ...]
-{$getIndent(4)}]
-]"
-                ],
+//            "key-array-recursive-reference-multi" =>
+//                [
+//                    "input" => $arr3,
+//                    "expected" => "foo => bar,
+//recursion3 => (Array) [
+//{$getIndent(4)}bar => foo,
+//{$getIndent(4)}recursion4 => (Array) [
+//{$getIndent(4)}{$getIndent(4)}foo => bar,
+//{$getIndent(4)}{$getIndent(4)}recursion3 => (Array) [
+//{$getIndent(4)}{$getIndent(4)}{$getIndent(4)}[... recursion ...]
+//{$getIndent(4)}{$getIndent(4)}]
+//{$getIndent(4)}],
+//{$getIndent(4)}recursion4-2 => (Array) [
+//{$getIndent(4)}{$getIndent(4)}[... recursion ...]
+//{$getIndent(4)}]
+//]"
+//                ],
         ];
 
         foreach ($tests as $name => $data) {
-            $actual = ArrayUtil::toString($data["input"], 5, 0);
+            $actual = ArrayUtil::toString($data["input"], 5);
 //            echo $actual."\n\n";
             $expected = str_replace("\r\n","\n",$data["expected"]); // unify whitespaces
             $this->assertEquals($expected, $actual, "Result error on test $name:\n" . ArrayUtilityTestHelper::getArrStr($expected, $actual, $data["input"]));

@@ -2,13 +2,9 @@
 
 - docu
 
-#dev-master
+##0.7.0
 
-###0.1.3
-
- - fixed toString intendation and added test to toString
- - added __toString() method to array path
- - updated comparison-util dependency
+ - updated dependencies (PHP ~7)
 
 ###0.1.2
 
