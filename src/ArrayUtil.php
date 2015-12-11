@@ -334,7 +334,7 @@ class ArrayUtil
      * @todo Find a better solution
      * @param $arr
      * @param int $level
-     * @return mixed
+     * @return string
      */
     public static function toString($arr,$level = 3){
         self::$uniqueObject = new \stdClass;
