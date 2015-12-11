@@ -2,7 +2,7 @@
 
 - docu
 
-##0.7.0
+##0.7.5
 
  - updated dependencies (PHP ~7)
 
